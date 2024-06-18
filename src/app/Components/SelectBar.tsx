@@ -11,6 +11,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import pulseira from '../assets/pulseira.png'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 
 
 
@@ -54,17 +56,26 @@ export default function SelectBar({ menupeca, setmenupeca }: AuxProps) {
             </TabContext>
             </Box>
         </div>
-        <div className='bg-blue-500 h-[63vh] w-[100vw] flex justify-center items-center '>
+        <div className='bg-blue-500 h-[63vh] w-[100vw] flex flex-row '>
             <Box sx={{ width: '100%' }}>
             <TabContext value={menupeca}>
                 <TabPanel value="1">Pulseiras
-                <Card sx={{ width: 345, height:250}}>
+                <Card sx={{ width: 250, height:270}}>
                     <CardMedia
                         component='img'
                         sx={{ height: 170, objectFit: 'contain'}}
                         image='/_next/static/media/pulseira.f5342789.png'
-                        
-                            />
+                        />
+                    <CardContent className='justify-center flex'>
+                      <Typography gutterBottom variant='h7'>
+                        Pulseira Pipoca 45cm
+                      </Typography>
+                    <CardActions>
+                      <IconButton >
+                        <ShoppingCartIcon />
+                        </IconButton>
+                      </CardActions>
+                    </CardContent>
                     </Card>
                 </TabPanel>
                 <TabPanel value="2">Item Two</TabPanel>
