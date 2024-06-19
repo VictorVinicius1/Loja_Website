@@ -1,18 +1,11 @@
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
+import TabList from '@mui/lab/TabList';
 import React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import pulseira from '../assets/pulseira.png'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import IconButton, { IconButtonProps } from '@mui/material/IconButton';
+import Panels from './Panels';
+
 
 
 
@@ -27,8 +20,8 @@ export default function SelectBar({ menupeca, setmenupeca }: AuxProps) {
   }
   return (
     <>
-    {console.log('iguana', pulseira)}
-    <div className='bg-purple-00 h-[50vh] w-[100vw]'>
+
+    <div className=' bg-purple-200 h-[50vh] w-[100vw]'>
         <div className=' h-[7vh] w-[100vw]'>
             <Box sx={{ width: '100%', typography: 'body1' }}>
             <TabContext value={menupeca}>
@@ -48,39 +41,23 @@ export default function SelectBar({ menupeca, setmenupeca }: AuxProps) {
                     <Tab label="Gargantilhas" value="12" />
                     <Tab label="Infantil" value="13" />
                     <Tab label="Argolas" value="14" />
-                    <Tab label="Piercings" value="15" />
-
-                    
+                    <Tab label="Piercings" value="15" />           
                 </TabList>
                 </Box>
             </TabContext>
             </Box>
         </div>
-        <div className='bg-blue-500 h-[63vh] w-[100vw] flex flex-row '>
+        <div className='overflow-hidden bg-blue-500 h-[63vh] w-[100vw] flex flex-row '>
             <Box sx={{ width: '100%' }}>
-            <TabContext value={menupeca}>
-                <TabPanel value="1">Pulseiras
-                <Card sx={{ width: 250, height:270}}>
-                    <CardMedia
-                        component='img'
-                        sx={{ height: 170, objectFit: 'contain'}}
-                        image='/_next/static/media/pulseira.f5342789.png'
-                        />
-                    <CardContent className='justify-center flex'>
-                      <Typography gutterBottom variant='h7'>
-                        Pulseira Pipoca 45cm
-                      </Typography>
-                    <CardActions>
-                      <IconButton >
-                        <ShoppingCartIcon />
-                        </IconButton>
-                      </CardActions>
-                    </CardContent>
-                    </Card>
-                </TabPanel>
-                <TabPanel value="2">Item Two</TabPanel>
-                <TabPanel value="3">Item Three</TabPanel>
-            </TabContext>
+              <TabContext value={menupeca}>
+                  <TabPanel value="1">
+                    <Panels  menupeca={menupeca}></Panels>  
+                  </TabPanel>
+                  <TabPanel value="2">
+                    <Panels  menupeca={menupeca}></Panels>
+                  </TabPanel>
+                  <TabPanel value="3">Item Three</TabPanel>
+              </TabContext>
             </Box>
         </div>
     </div>
