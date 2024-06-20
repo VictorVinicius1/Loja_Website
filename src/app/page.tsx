@@ -16,6 +16,11 @@ export default function Page() {
     <SelectBar menupeca={menupeca} setmenupeca={setmenupeca}>
 
     </SelectBar>
+    <div className='bg-red-500 h-[30vh] w-[100vw] over'>
+      
+
+    </div>
+
 
     
     </>
