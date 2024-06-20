@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import ButtonBase from '@mui/material/ButtonBase';
+import { Grid } from "@mui/material";
 
 
 interface AuxProps{
@@ -20,32 +21,29 @@ export default function CardsModel({urlimagem,descricao,valor,parcelamento}:AuxP
 
   return (
 <>
-    <ButtonBase>
-        <Card sx={{ width: 250, height: 300 }}>
-        <CardMedia
-            component="img"
-            sx={{ height: 170, objectFit: "contain" }}
-            image={urlimagem} 
-        />
-        <CardContent className=" flex flex-col">
-            <Typography className="flex font-bold " gutterBottom variant="h7" component={'div'}>
-                {descricao}
-                
-            </Typography>
-            <div className="flex flex-row justify-between  ">
-                <div>
-                    <Typography className=" flex" variant="body2">{valor}</Typography>
-                    <Typography className="" variant="body2">{parcelamento}</Typography>
-                </div>
-            <CardActions className="">
-            <IconButton>
+    <Grid item>
+        <ButtonBase>
+            <Card sx={{ width: 240, height: 300 }}>
+            <CardMedia
+                component="img"
+                sx={{ height: 170, objectFit: "contain" }}
+                image={urlimagem} 
+            />
+            <CardContent className=" flex flex-col">
+                <Typography className="flex font-bold " gutterBottom variant="h7" component={'div'}>
+                    {descricao}
+                </Typography>
+                <div className="flex flex-row justify-between  ">
+                    <div>
+                        <Typography className=" flex" variant="body2">{valor}</Typography>
+                        <Typography className="" variant="body2">{parcelamento}</Typography>
+                    </div>
                 <ShoppingCartIcon />
-            </IconButton>
-            </CardActions>
-            </div>
-        </CardContent>
-        </Card>
-    </ButtonBase>
+                </div>
+            </CardContent>
+            </Card>
+        </ButtonBase>
+    </Grid>
 </>    
   );
 }
